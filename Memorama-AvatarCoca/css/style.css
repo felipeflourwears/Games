@@ -1,0 +1,92 @@
+body{
+    background: rgb(214,36,60);
+    background: linear-gradient(90deg, rgba(214,36,60,1) 0%, rgba(253,29,29,1) 50%, rgba(181,46,69,1) 100%);
+    /* https://cssgradient.io/ */
+    font-family: sans-serif;
+    color: white;
+}
+main{
+    width: 730px;
+    /*
+    float: right;
+    margin-right: 70px;
+    margin-top: 80px;
+    margin: 100px 450px 50px 0; */ /* Arriba, Derecha, Abajo, Izquierda */
+    /* float: right; */
+    /*Centrado Game quitar margin, float
+	margin: 100px auto 50px;
+	
+    */
+    float: right;
+    margin-right: 70px;
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+}
+.section1{
+    background-color: rgba(255,255,255,0.2);
+    padding: 0 10px 10px 10px;
+    border-radius: 8px;
+}
+h1{
+    text-align: center;
+}
+button{
+    /* Por defecto 100px por card */
+    height: 90px;
+    width: 90px;
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+button:hover{
+    cursor: pointer;
+}
+.section2{
+    background-color: rgba(255,255,255, 0.2);
+    width: 250px;
+    height: 400px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 0 20px;
+}
+.estadisticas{
+    border: 1px solid white;
+    height: 105px;
+    border-radius: 8px;
+    padding: 8px 20px;
+    box-sizing: border-box;
+
+}
+footer{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+a{
+    text-decoration: none;
+}
+
+#reloadButton {
+    background-color: #4eb8c4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#reloadButton:hover {
+    background-color: #36a0a6;
+}
+#t-restante{
+    font-size: 20px;
+}

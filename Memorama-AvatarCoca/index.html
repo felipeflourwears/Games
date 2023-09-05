@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memorama</title>
-
+    <title>Memory Game</title>
+    <link rel="icon" href="img/coca.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <main>
      <section class="section1">
-        <h1>Juego de Memorama</h1>
+        <h1>Memory Game</h1>
         <table>
             <tr>
                 <td><button id="0" onclick="destapar(0)"></button></td>
@@ -39,14 +39,20 @@
         </table>
      </section>
      <section class="section2">
-        <h2 id="aciertos" class="estadisticas">Aciertos: 0</h2>
-        <h2 id="t-restante" class="estadisticas">Tiempo: 30 segundos</h2>
-        <h2 id="movimientos" class="estadisticas">Movimientos: 0 </h2>
+        <h2 id="aciertos" class="estadisticas">Correct: 0</h2>
+        <h2 id="t-restante" class="estadisticas">Time: 60 seconds</h2>
+        <h2 id="movimientos" class="estadisticas">Moves: 0 </h2>
      </section>
-    </main>
+
     <footer>
-         <p>Game for Popatelier </p>
+        <button id="reloadButton">Try Again</button>
+         <p>Game by Popatelier </p>
     </footer>
+     
+    </main>
+    
+    
+    
     <script src="js/script.js"></script>
 </body>
 </html>

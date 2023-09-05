@@ -741,3 +741,6 @@ $("#left").click(function() {
 $("#right").click(function() {
   board.rightKeyPress();
 });
+
+console.log("Ancho de la página: " + window.innerWidth + "px");
+console.log("Alto de la página: " + window.innerHeight + "px");
