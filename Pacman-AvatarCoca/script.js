@@ -126,6 +126,8 @@ Pacman.Ghost = function (game, map, colour) {
         return (game.getTick() - tick) / Pacman.FPS;
     };
 
+
+    //GHOST PACMAN
     function getColour() { 
         if (eatable) { 
             if (secondsAgo(eatable) > 5) { 
@@ -179,6 +181,7 @@ Pacman.Ghost = function (game, map, colour) {
         ctx.fill();
 
         ctx.beginPath();
+        //Ojos Ghosts Background
         ctx.fillStyle = "#FFF";
         ctx.arc(left + 6,top + 6, s / 6, 0, 300, false);
         ctx.arc((left + s) - 6,top + 6, s / 6, 0, 300, false);
@@ -193,6 +196,7 @@ Pacman.Ghost = function (game, map, colour) {
         off[DOWN]  = [0, f];
 
         ctx.beginPath();
+        //Pupilas Ojos Ghost
         ctx.fillStyle = "#000";
         ctx.arc(left+6+off[direction][0], top+6+off[direction][1], 
                 s / 15, 0, 300, false);
@@ -478,7 +482,7 @@ Pacman.User = function (game, map) {
         if (amount >= 1) { 
             return;
         }
-
+        //Muerte de PACMAN
         ctx.fillStyle = "#FFFF00";
         ctx.beginPath();        
         ctx.moveTo(((position.x/10) * size) + half, 
@@ -496,6 +500,7 @@ Pacman.User = function (game, map) {
         var s     = map.blockSize, 
             angle = calcAngle(direction, position);
 
+        //Color PACMAN
         ctx.fillStyle = "#FFFF00";
 
         ctx.beginPath();        
@@ -558,8 +563,8 @@ Pacman.Map = function (size) {
     function drawWall(ctx) {
 
         var i, j, p, line;
-        
-        ctx.strokeStyle = "#0000FF";
+        //Bordes del tablero de PACMAN
+        ctx.strokeStyle = "#8b0000";
         ctx.lineWidth   = 5;
         ctx.lineCap     = "round";
         
@@ -611,10 +616,12 @@ Pacman.Map = function (size) {
                 if (map[i][j] === Pacman.PILL) {
                     ctx.beginPath();
 
+                    //Refuerzo Pacman Fondo
                     ctx.fillStyle = "#000";
 		            ctx.fillRect((j * blockSize), (i * blockSize), 
                                  blockSize, blockSize);
 
+                    //Refuerzo Pacman Centro
                     ctx.fillStyle = "#FFF";
                     ctx.arc((j * blockSize) + blockSize / 2,
                             (i * blockSize) + blockSize / 2,
@@ -632,6 +639,7 @@ Pacman.Map = function (size) {
         
         var i, j, size = blockSize;
 
+        //Relleno Borde Tablero
         ctx.fillStyle = "#000";
 	    ctx.fillRect(0, 0, width * size, height * size);
 
@@ -657,10 +665,11 @@ Pacman.Map = function (size) {
         if (layout === Pacman.EMPTY || layout === Pacman.BLOCK || 
             layout === Pacman.BISCUIT) {
             
+            //Background Bolitas de Pacman
             ctx.fillStyle = "#000";
 		    ctx.fillRect((x * blockSize), (y * blockSize), 
                          blockSize, blockSize);
-
+            //Color Bolitas de Pacman
             if (layout === Pacman.BISCUIT) {
                 ctx.fillStyle = "#FFF";
 		        ctx.fillRect((x * blockSize) + (blockSize / 2.5), 
@@ -833,7 +842,7 @@ var PACMAN = (function () {
     }
 
     function keyDown(e) {
-        if (e.keyCode === KEY.N) {
+        if (e.keyCode === 32) {
             startNewGame();
         } else if (e.keyCode === KEY.S) {
             audio.disableSound();
@@ -968,7 +977,7 @@ var PACMAN = (function () {
         } else if (state === WAITING && stateChanged) {            
             stateChanged = false;
             map.draw(ctx);
-            dialog("Press N to start a New game");            
+            dialog("Press Space to start a New game");            
         } else if (state === EATEN_PAUSE && 
                    (tick - timerStart) > (Pacman.FPS / 3)) {
             map.draw(ctx);
@@ -1081,7 +1090,7 @@ var PACMAN = (function () {
         
     function loaded() {
 
-        dialog("Press N to Start");
+        dialog("Press Space to Start");
         
         document.addEventListener("keydown", keyDown, true);
         document.addEventListener("keypress", keyPress, true); 
