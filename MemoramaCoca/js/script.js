@@ -14,7 +14,6 @@ let mostrarMovimientos = document.getElementById("movimientos");
 let mostrarAciertos= document.getElementById("aciertos");
 let mostrarTiempo= document.getElementById("t-restante");
 
-// Obtén una referencia al botón de recarga por su id
 const reloadButton = document.getElementById("reloadButton");
 
 
@@ -42,7 +41,7 @@ function bloquearTarjetas(){
     for(let i = 0; i<=15; i++){
         let tarjetaBloqueada = document.getElementById(i);
        /*  tarjetaBloqueada.innerHTML = numbers[i]; */
-       tarjetaBloqueada.innerHTML = `<img src="./img/${numbers[i]}" alt="Imagen" style="width: 80px; height: 80px;">`;
+       tarjetaBloqueada.innerHTML = `<img src="./img/${numbers[i]}" alt="Imagen" style="width: 170px; height: 170px;">`;
         tarjetaBloqueada.disabled = true;
     }
 }
@@ -60,7 +59,7 @@ function destapar(id){
         tarjeta1 = document.getElementById(id);
         primerResultado = numbers[id];
         /* tarjeta1.innerHTML = primerResultado; */
-        tarjeta1.innerHTML = `<img src="./img/${primerResultado}" alt="Imagen" style="width: 80px; height: 80px;">`;
+        tarjeta1.innerHTML = `<img src="./img/${primerResultado}" alt="Imagen" style="width: 170px; height: 170px;">`;
 
         //Deshabilitar primer boton
         tarjeta1.disabled = true;
@@ -69,7 +68,7 @@ function destapar(id){
         tarjeta2 = document.getElementById(id);
         segundoResultado = numbers[id];
         /* tarjeta2.innerHTML = segundoResultado; */
-        tarjeta2.innerHTML = `<img src="./img/${segundoResultado}" alt="Imagen" style="width: 80px; height: 80px;">`;
+        tarjeta2.innerHTML = `<img src="./img/${segundoResultado}" alt="Imagen" style="width: 170px; height: 170px;">`;
 
         //Deshabilitar Segundo Boton
         tarjeta2.disabled = true;
@@ -105,7 +104,35 @@ function destapar(id){
     }
 }
 
-// Agrega el event listener para recargar la página
-reloadButton.addEventListener("click", function() {
-    location.reload(); // Esta función recargará la página
-});
+function resetearJuego() {
+    // Reiniciar variables
+    tarjetasDestapadas = 0;
+    tarjeta1 = null;
+    tarjeta2 = null;
+    primerResultado = null;
+    segundoResultado = null;
+    movimientos = 0;
+    aciertos = 0;
+    temporizador = false;
+    timer = timerInicial;
+  
+    // Detener y reiniciar el temporizador
+    clearInterval(tiempoRegresivoId);
+    mostrarTiempo.innerHTML = `Time: ${timer} seconds`;
+  
+    // Habilitar todas las tarjetas
+    for (let i = 0; i <= 15; i++) {
+      let tarjeta = document.getElementById(i);
+      tarjeta.innerHTML = ''; // Limpiar contenido
+      tarjeta.disabled = false; // Habilitar tarjeta
+    }
+  
+    // Restablecer las estadísticas
+    mostrarMovimientos.innerHTML = `Moves: ${movimientos}`;
+    mostrarAciertos.innerHTML = `Correct: ${aciertos}`;
+  }
+  
+  // Agrega el event listener para recargar la página
+  reloadButton.addEventListener("click", function() {
+    resetearJuego(); // Llama a la función de reinicio al hacer clic en el botón de recarga
+  });

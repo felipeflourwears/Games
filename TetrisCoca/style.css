@@ -2,9 +2,9 @@ body {
   background-color: rgba(240,19,19,1);
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
  /*  border: .2rem solid #0bcaaa; */
-  text-align: right; /* Alinea todo el contenido hacia la derecha */
+  text-align: center; /* Alinea todo el contenido hacia la derecha */
   width: auto;
-  height: 700px;
+  height: 500px;
 }
 
 .labels {
@@ -64,9 +64,6 @@ body {
   width: 365px;
   margin: auto;
   /* border: 0.2rem solid #ca0baa; */
-  margin-right: 100px; /* Alinea el div hacia el lado derecho auto*/
-  justify-content: flex-end;
-  margin-top: 100px;
 }
 
 #board {

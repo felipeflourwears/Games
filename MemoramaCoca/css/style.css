@@ -1,0 +1,110 @@
+body{
+    text-align: center;
+    background: rgb(214,36,60);
+    background: linear-gradient(90deg, rgba(214,36,60,1) 0%, rgba(253,29,29,1) 50%, rgba(181,46,69,1) 100%);
+    /* https://cssgradient.io/ */
+    font-family: sans-serif;
+    color: white;
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; /* Centra el contenido verticalmente */
+}
+main{
+    width: 730px;
+    /*
+    float: right;
+    margin-right: 70px;
+    margin-top: 80px;
+    margin: 100px 450px 50px 0; */ /* Arriba, Derecha, Abajo, Izquierda */
+    /* float: right; */
+    /*Centrado Game quitar margin, float
+
+	
+    */
+    margin: 100px auto 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.section1{
+    background-color: rgba(255,255,255,0.2);
+    padding: 0 10px 10px 10px;
+    border-radius: 8px;
+}
+h1{
+    text-align: center;
+}
+button{
+    /* Por defecto 100px por card */
+    height: 230px;
+    width: 200px;
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+
+}
+button:hover{
+    cursor: pointer;
+}
+.section2{
+    /* background-color: rgba(255,255,255, 0.2); */
+    height: 250px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 0 20px;
+    border-radius: 8px;
+}
+
+.horizontal-container {
+    display: flex; /* Cambiamos la presentación a flexbox */
+    justify-content: space-between; /* Distribuye los elementos de manera uniforme */
+    align-items: center; /* Centra verticalmente los elementos */
+  }
+.estadisticas{
+    font-size: 40px;
+    border: 1px solid white;
+    height: 175px;
+    border-radius: 8px;
+    padding: 8px 20px;
+    box-sizing: border-box;
+
+}
+footer{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+}
+
+#reloadButton {
+
+    margin-left: 10px;
+    font-size: 18px;
+    background-color: rgb(57, 197, 197);
+    color: white; /* Cambia el color del texto a blanco para que sea legible en el fondo cian */
+    border: none; /* Elimina el borde del botón */
+    padding: 10px 20px; /* Ajusta el relleno (padding) según tus necesidades */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    border: none; /* Elimina el borde del botón */
+    padding: 10px 20px;
+    border-radius: 10px; 
+    width: 200px;
+    height: 180px;
+  }
+  
+  #reloadButton:hover {
+    background-color: rgb(55, 172, 172); /* Cambia el color de fondo al pasar el mouse por encima */
+  }
+  
+#t-restante{
+    font-size: 40px;
+}
+.imgcoca{
+    margin-left: 20px;
+}
